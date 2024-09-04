@@ -1,7 +1,7 @@
 services:
 
   db:
-    container_name: "sopherapps.metabase.pg"
+    container_name: "postgres"
     restart: "always"
     image: alpy-pg
     build: ./pg
@@ -13,7 +13,7 @@ services:
       - 54320:5432
 
   metabase:
-    container_name: "sopherapps.metabase.metabase"
+    container_name: "metabase"
     restart: "always"
     image: metabase/metabase
     env_file:
