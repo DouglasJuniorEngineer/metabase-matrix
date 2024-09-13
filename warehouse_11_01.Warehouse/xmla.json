@@ -1,0 +1,856 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "RLS",
+        "sourceLineageTag": "[dbo].[RLS]",
+        "columns": [
+          {
+            "name": "cod_central",
+            "dataType": "int64",
+            "sourceColumn": "cod_central",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_central",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "central",
+            "dataType": "string",
+            "sourceColumn": "central",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "central",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cod_coop",
+            "dataType": "int64",
+            "sourceColumn": "cod_coop",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_coop",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cooperativa",
+            "dataType": "string",
+            "sourceColumn": "cooperativa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cooperativa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cod_pa",
+            "dataType": "int64",
+            "sourceColumn": "cod_pa",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_pa",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pa",
+            "dataType": "string",
+            "sourceColumn": "pa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "pa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "operação",
+            "dataType": "string",
+            "sourceColumn": "operação",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "operação",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nome",
+            "dataType": "string",
+            "sourceColumn": "Nome",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nome",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "E-mail",
+            "dataType": "string",
+            "sourceColumn": "E-mail",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "E-mail",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "RLS",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "RLS1_Copia",
+        "sourceLineageTag": "[dbo].[RLS1_Copia]",
+        "columns": [
+          {
+            "name": "cod_central",
+            "dataType": "int64",
+            "sourceColumn": "cod_central",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_central",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "central",
+            "dataType": "string",
+            "sourceColumn": "central",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "central",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cod_coop",
+            "dataType": "int64",
+            "sourceColumn": "cod_coop",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_coop",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cooperativa",
+            "dataType": "string",
+            "sourceColumn": "cooperativa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cooperativa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cod_pa",
+            "dataType": "int64",
+            "sourceColumn": "cod_pa",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_pa",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pa",
+            "dataType": "string",
+            "sourceColumn": "pa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "pa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "operação",
+            "dataType": "string",
+            "sourceColumn": "operação",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "operação",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nome",
+            "dataType": "string",
+            "sourceColumn": "Nome",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nome",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "E-mail",
+            "dataType": "string",
+            "sourceColumn": "E-mail",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "E-mail",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "RLS1_Copia",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "RLS_2",
+        "sourceLineageTag": "[dbo].[RLS_2]",
+        "columns": [
+          {
+            "name": "cod_central",
+            "dataType": "int64",
+            "sourceColumn": "cod_central",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_central",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "central",
+            "dataType": "string",
+            "sourceColumn": "central",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "central",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cod_coop",
+            "dataType": "int64",
+            "sourceColumn": "cod_coop",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_coop",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cooperativa",
+            "dataType": "string",
+            "sourceColumn": "cooperativa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cooperativa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cod_pa",
+            "dataType": "int64",
+            "sourceColumn": "cod_pa",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "cod_pa",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "pa",
+            "dataType": "string",
+            "sourceColumn": "pa",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "pa",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "operação",
+            "dataType": "string",
+            "sourceColumn": "operação",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "operação",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Nome",
+            "dataType": "string",
+            "sourceColumn": "Nome",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Nome",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "E-mail",
+            "dataType": "string",
+            "sourceColumn": "E-mail",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "E-mail",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "RLS_2",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "public_startag_logtag",
+        "sourceLineageTag": "[dbo].[public_startag_logtag]",
+        "columns": [
+          {
+            "name": "__connect_topic",
+            "dataType": "string",
+            "sourceColumn": "__connect_topic",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "__connect_topic",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "__connect_partition",
+            "dataType": "int64",
+            "sourceColumn": "__connect_partition",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "__connect_partition",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "__connect_offset",
+            "dataType": "int64",
+            "sourceColumn": "__connect_offset",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "__connect_offset",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "uuid",
+            "dataType": "string",
+            "sourceColumn": "uuid",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "uuid",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "type",
+            "dataType": "string",
+            "sourceColumn": "type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "created_at",
+            "dataType": "dateTime",
+            "sourceColumn": "created_at",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "created_at",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "updated_at",
+            "dataType": "dateTime",
+            "sourceColumn": "updated_at",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "updated_at",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "user_name",
+            "dataType": "string",
+            "sourceColumn": "user_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "user_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "table_name",
+            "dataType": "string",
+            "sourceColumn": "table_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "table_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "id.1",
+            "dataType": "string",
+            "sourceColumn": "id.1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "id.1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "obuid",
+            "dataType": "string",
+            "sourceColumn": "obuid",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "obuid",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_ptp",
+            "dataType": "boolean",
+            "sourceColumn": "is_ptp",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_ptp",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "plan_id",
+            "dataType": "int64",
+            "sourceColumn": "plan_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "plan_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "contract_id",
+            "dataType": "int64",
+            "sourceColumn": "contract_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "contract_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_canceled",
+            "dataType": "boolean",
+            "sourceColumn": "is_canceled",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_canceled",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "serial_number",
+            "dataType": "string",
+            "sourceColumn": "serial_number",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "serial_number",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_user_blocked",
+            "dataType": "boolean",
+            "sourceColumn": "is_user_blocked",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_user_blocked",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "vehicle_type_id",
+            "dataType": "int64",
+            "sourceColumn": "vehicle_type_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "vehicle_type_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "is_system_blocked",
+            "dataType": "boolean",
+            "sourceColumn": "is_system_blocked",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "is_system_blocked",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "replaced_by_tag_id",
+            "dataType": "string",
+            "sourceColumn": "replaced_by_tag_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "replaced_by_tag_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "vehicle_license_plate",
+            "dataType": "string",
+            "sourceColumn": "vehicle_license_plate",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "vehicle_license_plate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "external_invoice_group_id",
+            "dataType": "int64",
+            "sourceColumn": "external_invoice_group_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "external_invoice_group_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "public_startag_logtag",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"RLS1_Copia\",\"public_startag_logtag\",\"RLS\",\"RLS_2\"]"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

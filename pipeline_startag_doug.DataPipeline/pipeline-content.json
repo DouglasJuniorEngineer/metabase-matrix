@@ -1,0 +1,648 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "AzurePostgreSqlSource",
+            "datasetSettings": {
+              "type": "AzurePostgreSqlTable",
+              "typeProperties": {
+                "table": "__bi_log",
+                "schema": "public"
+              },
+              "schema": [
+                {
+                  "name": "id",
+                  "type": "bigint",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "uuid",
+                  "type": "uuid",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "operation_type",
+                  "type": "character varying",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "created_at",
+                  "type": "timestamp with time zone",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "username",
+                  "type": "character varying",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "table_name",
+                  "type": "character varying",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "resource",
+                  "type": "jsonb",
+                  "precision": 0,
+                  "scale": 0
+                }
+              ],
+              "externalReferences": {
+                "connection": "72226962-b62f-4a66-ab90-bcaf098fabfe"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "public___bi_log"
+              },
+              "schema": [],
+              "linkedService": {
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "8738db98-cb20-4114-be7c-663ffda1eb77",
+                    "workspaceId": "8094564e-84bb-4cf4-acad-1bcf1f2e7796",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                },
+                "name": "startag_doug"
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "id",
+                  "type": "Int64",
+                  "physicalType": "bigint"
+                },
+                "sink": {
+                  "name": "id",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "uuid",
+                  "type": "Guid",
+                  "physicalType": "uuid"
+                },
+                "sink": {
+                  "name": "uuid",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "operation_type",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "operation_type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "created_at",
+                  "type": "DateTime",
+                  "physicalType": "timestamp with time zone"
+                },
+                "sink": {
+                  "name": "created_at",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "username",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "username",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "table_name",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "table_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "resource",
+                  "type": "String",
+                  "physicalType": "jsonb"
+                },
+                "sink": {
+                  "name": "resource",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Startag_Prod",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "AzurePostgreSqlSource",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "AzurePostgreSqlTable",
+              "typeProperties": {
+                "table": "businessUnit",
+                "schema": "public"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "15f00b5f-98e3-43ca-ae1e-ef5fdf2573a4"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "Libertas"
+              },
+              "schema": [],
+              "linkedService": {
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "11ab3f36-1542-4ea4-8f98-029d790f8a53",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                },
+                "name": "startag_doug"
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "id",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "id",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "status",
+                  "type": "Boolean",
+                  "physicalType": "boolean"
+                },
+                "sink": {
+                  "name": "status",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "createdAt",
+                  "type": "DateTime",
+                  "physicalType": "timestamp without time zone"
+                },
+                "sink": {
+                  "name": "createdAt",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "updatedAt",
+                  "type": "DateTime",
+                  "physicalType": "timestamp without time zone"
+                },
+                "sink": {
+                  "name": "updatedAt",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "name",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "tradingName",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "tradingName",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "agencyNumber",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "agencyNumber",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "settings",
+                  "type": "String",
+                  "physicalType": "json"
+                },
+                "sink": {
+                  "name": "settings",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "signers",
+                  "type": "String",
+                  "physicalType": "json"
+                },
+                "sink": {
+                  "name": "signers",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "isAutonomous",
+                  "type": "Boolean",
+                  "physicalType": "boolean"
+                },
+                "sink": {
+                  "name": "isAutonomous",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "paymentMethod",
+                  "type": "String",
+                  "physicalType": "USER-DEFINED"
+                },
+                "sink": {
+                  "name": "paymentMethod",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "defaultAreaCode",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "defaultAreaCode",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "bankNumber",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "bankNumber",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "parentId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "parentId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "organizationId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "organizationId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "pricingGroupId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "pricingGroupId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "shippingPricingGroupId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "shippingPricingGroupId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "serviceModelOptionsGroupId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "serviceModelOptionsGroupId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "contractModelAttachmentId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "contractModelAttachmentId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "comissionPercentage",
+                  "type": "Decimal",
+                  "physicalType": "numeric"
+                },
+                "sink": {
+                  "name": "comissionPercentage",
+                  "physicalType": "decimal"
+                }
+              },
+              {
+                "source": {
+                  "name": "deletedAt",
+                  "type": "DateTime",
+                  "physicalType": "timestamp without time zone"
+                },
+                "sink": {
+                  "name": "deletedAt",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "serviceProviderId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "serviceProviderId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "pdfHeader",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "pdfHeader",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "eletronicSignatureId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "eletronicSignatureId",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "whatsAppNumber",
+                  "type": "String",
+                  "physicalType": "character varying"
+                },
+                "sink": {
+                  "name": "whatsAppNumber",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "isIccidRequired",
+                  "type": "Boolean",
+                  "physicalType": "boolean"
+                },
+                "sink": {
+                  "name": "isIccidRequired",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "emailTemplateGroupId",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "emailTemplateGroupId",
+                  "physicalType": "integer"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Libertas_Prod",
+        "dependsOn": []
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "id",
+          "value": {
+            "value": "@activity('Lookup1').output.pipelineReturnValue",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Variable_Doug",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "AzurePostgreSqlSource",
+            "query": "select id from \"businessUnit\"",
+            "partitionOption": "None"
+          },
+          "datasetSettings": {
+            "type": "AzurePostgreSqlTable",
+            "typeProperties": {
+              "table": "businessUnit",
+              "schema": "public"
+            },
+            "schema": [],
+            "externalReferences": {
+              "connection": "15f00b5f-98e3-43ca-ae1e-ef5fdf2573a4"
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Lookup1",
+        "dependsOn": [
+          {
+            "activity": "Libertas_Prod",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "AzureFunctionActivity",
+        "typeProperties": {
+          "method": "PUT",
+          "functionName": "Delete_data_Douglas",
+          "headers": {},
+          "body": {
+            "value": "@activity('Lookup1').output.pipelineReturnValue",
+            "type": "Expression"
+          }
+        },
+        "externalReferences": {
+          "connection": "ada03625-a880-4a98-b1a3-ac962e217e1a"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Functions1",
+        "dependsOn": [
+          {
+            "activity": "Lookup1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "id": {
+        "type": "String"
+      }
+    },
+    "annotations": []
+  }
+}

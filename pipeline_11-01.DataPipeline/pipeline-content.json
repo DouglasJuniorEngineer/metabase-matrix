@@ -1,0 +1,224 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "items": {
+            "value": "@pipeline().parameters.cw_items_4m5",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "AzurePostgreSqlSource",
+                  "datasetSettings": {
+                    "type": "AzurePostgreSqlTable",
+                    "typeProperties": {
+                      "table": {
+                        "value": "@item().source.table",
+                        "type": "Expression"
+                      },
+                      "schema": "public"
+                    },
+                    "schema": [],
+                    "externalReferences": {
+                      "connection": "4fb12561-48a8-4f8d-8c13-74c093627c4f"
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "LakehouseTableSink",
+                  "tableActionOption": "Overwrite",
+                  "partitionOption": "None",
+                  "datasetSettings": {
+                    "type": "LakehouseTable",
+                    "typeProperties": {
+                      "table": {
+                        "value": "@item().destination.table",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "8dbca0f3-14e3-400d-8ae9-00b5a78a436b",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Tables"
+                        },
+                        "annotations": []
+                      },
+                      "name": "lakehouse_11_01"
+                    },
+                    "annotations": []
+                  }
+                },
+                "translator": {
+                  "type": "TabularTranslator",
+                  "mappings": [
+                    {
+                      "source": {
+                        "name": "__connect_topic",
+                        "physicalType": "text"
+                      },
+                      "sink": {
+                        "name": "__connect_topic",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "__connect_partition",
+                        "physicalType": "integer"
+                      },
+                      "sink": {
+                        "name": "__connect_partition",
+                        "physicalType": "integer"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "__connect_offset",
+                        "physicalType": "bigint"
+                      },
+                      "sink": {
+                        "name": "__connect_offset",
+                        "physicalType": "long"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "id",
+                        "physicalType": "integer"
+                      },
+                      "sink": {
+                        "name": "id",
+                        "physicalType": "integer"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "uuid",
+                        "physicalType": "text"
+                      },
+                      "sink": {
+                        "name": "uuid",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "type",
+                        "physicalType": "text"
+                      },
+                      "sink": {
+                        "name": "type",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "created_at",
+                        "physicalType": "timestamp without time zone"
+                      },
+                      "sink": {
+                        "name": "created_at",
+                        "physicalType": "timestamp"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "updated_at",
+                        "physicalType": "timestamp without time zone"
+                      },
+                      "sink": {
+                        "name": "updated_at",
+                        "physicalType": "timestamp"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "user_name",
+                        "physicalType": "text"
+                      },
+                      "sink": {
+                        "name": "user_name",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "table_name",
+                        "physicalType": "text"
+                      },
+                      "sink": {
+                        "name": "table_name",
+                        "physicalType": "string"
+                      }
+                    },
+                    {
+                      "source": {
+                        "name": "resource",
+                        "physicalType": "text"
+                      },
+                      "sink": {
+                        "name": "resource",
+                        "physicalType": "string"
+                      }
+                    }
+                  ],
+                  "typeConversion": true,
+                  "typeConversionSettings": {
+                    "allowDataTruncation": true,
+                    "treatBooleanAsNumber": false
+                  }
+                },
+                "enableStaging": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Copy_4m5",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "dados",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "cw_items_4m5": {
+        "type": "Array",
+        "defaultValue": [
+          {
+            "source": {
+              "table": "libertas_logtag"
+            },
+            "destination": {
+              "table": "public_libertas_logtag"
+            }
+          },
+          {
+            "source": {
+              "table": "startag_logtag"
+            },
+            "destination": {
+              "table": "public_startag_logtag"
+            }
+          }
+        ]
+      }
+    },
+    "annotations": []
+  }
+}

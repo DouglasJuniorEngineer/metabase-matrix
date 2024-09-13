@@ -1,0 +1,260 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "AzurePostgreSqlSource",
+            "datasetSettings": {
+              "type": "AzurePostgreSqlTable",
+              "typeProperties": {
+                "table": "libertas_logtag",
+                "schema": "public"
+              },
+              "schema": [
+                {
+                  "name": "__connect_topic",
+                  "type": "text",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "__connect_partition",
+                  "type": "integer",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "__connect_offset",
+                  "type": "bigint",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "id",
+                  "type": "integer",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "uuid",
+                  "type": "text",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "type",
+                  "type": "text",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "created_at",
+                  "type": "timestamp without time zone",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "updated_at",
+                  "type": "timestamp without time zone",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "user_name",
+                  "type": "text",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "table_name",
+                  "type": "text",
+                  "precision": 0,
+                  "scale": 0
+                },
+                {
+                  "name": "resource",
+                  "type": "text",
+                  "precision": 0,
+                  "scale": 0
+                }
+              ],
+              "externalReferences": {
+                "connection": "e29ba187-cb3c-497c-8318-4a9dfe684bf5"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Overwrite",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "public_libertas_logtag"
+              },
+              "schema": [],
+              "linkedService": {
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "7606fbb5-8caf-4003-b1d7-02efb8741d96",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                },
+                "name": "lake_test_delete"
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "__connect_topic",
+                  "type": "String",
+                  "physicalType": "text"
+                },
+                "sink": {
+                  "name": "__connect_topic",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "__connect_partition",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "__connect_partition",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "__connect_offset",
+                  "type": "Int64",
+                  "physicalType": "bigint"
+                },
+                "sink": {
+                  "name": "__connect_offset",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "id",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "id",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "uuid",
+                  "type": "String",
+                  "physicalType": "text"
+                },
+                "sink": {
+                  "name": "uuid",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "type",
+                  "type": "String",
+                  "physicalType": "text"
+                },
+                "sink": {
+                  "name": "type",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "created_at",
+                  "type": "DateTime",
+                  "physicalType": "timestamp without time zone"
+                },
+                "sink": {
+                  "name": "created_at",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "updated_at",
+                  "type": "DateTime",
+                  "physicalType": "timestamp without time zone"
+                },
+                "sink": {
+                  "name": "updated_at",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "user_name",
+                  "type": "String",
+                  "physicalType": "text"
+                },
+                "sink": {
+                  "name": "user_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "table_name",
+                  "type": "String",
+                  "physicalType": "text"
+                },
+                "sink": {
+                  "name": "table_name",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "resource",
+                  "type": "String",
+                  "physicalType": "text"
+                },
+                "sink": {
+                  "name": "resource",
+                  "physicalType": "string"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy_njm",
+        "dependsOn": []
+      }
+    ],
+    "annotations": []
+  }
+}
